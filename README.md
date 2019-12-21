@@ -1,4 +1,4 @@
-Использованные технологии: JS, NodeJS, Typescript, Cheerio
+Использованные технологии: JS, NodeJS, Typescript, Puppeteer, Cheerio
 -------------
 Программа для составления отчётов Jilfond
 =============
