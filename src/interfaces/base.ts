@@ -9,4 +9,13 @@ interface ILinks {
   workedOut: string;
 }
 
-export { IConfig, ILinks };
+interface IHelpers {
+  preparationData: Function;
+  showError: Function;
+}
+
+interface ISaveFile {
+  createReport: Function;
+}
+
+export { IConfig, ILinks, IHelpers, ISaveFile };
