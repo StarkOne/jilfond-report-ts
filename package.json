@@ -1,0 +1,48 @@
+{
+  "name": "reports",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --inspect=5858 -r ts-node/register ./src/app.ts",
+    "start:watch": "nodemon",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "StarkOne",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.12.21",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.19.1",
+    "nodemon": "^2.0.2",
+    "prettier": "1.19.1",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.4"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm start",
+    "ext": "ts"
+  },
+  "dependencies": {
+    "@types/cheerio": "^0.22.15",
+    "@types/puppeteer": "^2.0.0",
+    "axios": "^0.19.0",
+    "chalk": "^3.0.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cli-spinner": "^0.2.10",
+    "dotenv": "^8.2.0",
+    "enquirer": "^2.3.2",
+    "moment": "^2.24.0",
+    "puppeteer": "^2.0.0"
+  }
+}
