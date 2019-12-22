@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node --inspect=5858 -r ts-node/register ./src/app.ts",
     "start:watch": "nodemon",
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write src/**/*.ts"
   },
   "keywords": [],
   "author": "StarkOne",

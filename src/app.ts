@@ -24,10 +24,10 @@ prompt
         const dateMonth: string = moment()
           .month(answer)
           .format("GGGG-MM");
-        const html: IPuppeteerLink = await puppeteerFunc.getLinkHtml(config);
+        const html: IPuppeteerLink = await puppeteerFunc.getLinkHtml();
         const links: ILinks = await cheerioFunc.parseLink(html, dateMonth);
         helpers.showError(links);
-        const content: Promise<Object> = await puppeteerFunc.getContent(links);
+        const content: Array<string> = await puppeteerFunc.getContent(links);
         const implemented: Array<ITast> = await cheerioFunc.parsingData(
           html.name,
           content[0],

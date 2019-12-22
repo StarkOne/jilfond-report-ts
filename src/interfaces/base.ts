@@ -1,3 +1,5 @@
+import { ITast } from "./tasks";
+
 interface IConfig {
   LOGIN: string;
   PASSWORD: string;
@@ -10,12 +12,16 @@ interface ILinks {
 }
 
 interface IHelpers {
-  preparationData: Function;
-  showError: Function;
+  preparationData: (data: Array<ITast>, implemented?: boolean) => Array<ITast>;
+  showError: (links: ILinks) => void;
 }
 
 interface ISaveFile {
-  createReport: Function;
+  createReport: (
+    workedOutTasks: Array<ITast>,
+    implementedTasks: Array<ITast>,
+    month: string
+  ) => void;
 }
 
 export { IConfig, ILinks, IHelpers, ISaveFile };
