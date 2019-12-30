@@ -23,7 +23,7 @@ prompt
         sp.start();
         const dateMonth: string = moment()
           .month(answer)
-          .format("GGGG-MM");
+          .format("YYYY-MM");
         const html: IPuppeteerLink = await puppeteerFunc.getLinkHtml();
         const links: ILinks = await cheerioFunc.parseLink(html, dateMonth);
         helpers.showError(links);
@@ -47,6 +47,7 @@ prompt
       } catch (error) {
         sp.stop();
         console.log(chalk.red(error));
+        console.log(chalk.bgRed("Попробуйте запустить снова!"));
       }
     }
   )

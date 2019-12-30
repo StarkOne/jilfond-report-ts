@@ -18,8 +18,8 @@ const preparationData = (
     number: "Итого",
     title: "",
     timeSpent: {
-      hours: firstElement.timeSpent.hours,
-      minutes: firstElement.timeSpent.minutes
+      hours: firstElement.timeSpent ? firstElement.timeSpent.hours : 0,
+      minutes: firstElement.timeSpent ? firstElement.timeSpent.minutes : 0
     },
     estimatedTime: {
       hours: implemented ? firstElement.estimatedTime.hours : 0,

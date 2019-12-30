@@ -44,11 +44,11 @@ const formationText = (text: string, list: Array<ITast>): string => {
 
 const createCurrentDate = (str: string): void => {
   if (str) {
-    date = moment(str).format("MMMM - GGGG");
-    title = moment(str).format("MMMM-GGGG");
+    date = moment(str).format("MMMM - YYYY");
+    title = moment(str).format("MMMM-YYYY");
   } else {
-    date = moment().format("MMMM - GGGG");
-    title = moment().format("MMMM-GGGG");
+    date = moment().format("MMMM - YYYY");
+    title = moment().format("MMMM-YYYY");
   }
 };
 
