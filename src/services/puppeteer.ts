@@ -16,6 +16,7 @@ const getLinkHtml = async (): Promise<IPuppeteerLink> => {
     "https://jilfond.myjetbrains.com/youtrack/reports",
     { waitUntil: "networkidle0" }
   );
+  await loginData.page.waitFor(1000);
   await loginData.page.click(
     '[data-test="sharedReports"] [title="Показать больше"]'
   );
