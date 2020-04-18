@@ -4,7 +4,7 @@ import { Browser, Page } from "puppeteer";
 const login = async ({ LOGIN, PASSWORD }) => {
   const browser: Browser = await puppeteer.launch({ headless: true });
   const page: Page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 720 });
+  await page.setViewport({ width: 1200, height: 2500 });
   await page.goto("https://jilfond.myjetbrains.com/hub/auth/login", {
     waitUntil: "networkidle0"
   });
