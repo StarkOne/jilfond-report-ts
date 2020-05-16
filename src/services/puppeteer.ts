@@ -13,7 +13,7 @@ const getLinkHtml = async (): Promise<IPuppeteerLink> => {
     element
   );
   await loginData.page.goto(
-    "https://jilfond.myjetbrains.com/youtrack/reports",
+    "http://ytr.jilfond.org:8943/reports",
     { waitUntil: "networkidle0" }
   );
   await loginData.page.waitFor(1000);
@@ -37,7 +37,7 @@ const getContent = async (links: ILinks): Promise<Object> => {
   const loginData = await login(config);
   for (let link in links) {
     await loginData.page.goto(
-      `https://jilfond.myjetbrains.com/youtrack/${links[link]}`,
+      `http://ytr.jilfond.org:8943/youtrack/${links[link]}`,
       { waitUntil: "networkidle0" }
     );
     let content: string = await loginData.page.evaluate(
