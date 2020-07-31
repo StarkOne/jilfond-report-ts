@@ -1,9 +1,10 @@
-import { ITast } from "./tasks";
+import { ITast } from './tasks';
 
 interface IConfig {
   LOGIN: string;
   PASSWORD: string;
   PAYMENT_PER_HOUR: string;
+  URL_YTR: string;
 }
 
 interface ILinks {
