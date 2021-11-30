@@ -6,7 +6,7 @@ interface IPuppeteerLink {
 }
 
 interface IPuppeteerFunc {
-  getLinkHtml: () => Promise<IPuppeteerLink>;
+  getLinkHtml: (date: string) => Promise<IPuppeteerLink>;
   getContent: (links: ILinks) => Array<string>;
 }
 

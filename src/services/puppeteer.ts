@@ -2,8 +2,9 @@ import { IConfig, ILinks } from '../interfaces/base';
 import { IPuppeteerLink } from '../interfaces/puppeteer';
 const login = require('./login');
 const config: IConfig = require('dotenv').config().parsed;
+const FILTER_INPUT = 'input[placeholder="Filter items"]';
 
-const getLinkHtml = async (): Promise<IPuppeteerLink> => {
+const getLinkHtml = async (date: string): Promise<IPuppeteerLink> => {
   const loginData = await login(config);
   const element = await loginData.page.$(
     '[data-test="ring-dropdown ring-profile"]'
@@ -19,6 +20,8 @@ const getLinkHtml = async (): Promise<IPuppeteerLink> => {
   await loginData.page.click(
     '[data-test="sharedReports"] [title="Показать больше"]'
   );
+  await loginData.page.focus(FILTER_INPUT);
+  await loginData.page.keyboard.type(date);
   const html = await loginData.page.$eval('.list_735', (element) => {
     return element.innerHTML;
   });
