@@ -24,7 +24,7 @@ prompt
         const dateMonth: string = moment()
           .month(answer)
           .format("YYYY-MM");
-        const html: IPuppeteerLink = await puppeteerFunc.getLinkHtml();
+        const html: IPuppeteerLink = await puppeteerFunc.getLinkHtml(dateMonth);
         const links: ILinks = await cheerioFunc.parseLink(html, dateMonth);
         helpers.showError(links);
         const content: Array<string> = await puppeteerFunc.getContent(links);
